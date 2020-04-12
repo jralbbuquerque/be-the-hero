@@ -42,6 +42,7 @@
 const express = require('express');
 const cors = require('cors');
 const routes = require('./routes');
+const { errors } = require('celebrate')
 
 // A variável app será responsável pela aplicação
 const app = express();
@@ -49,6 +50,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(routes);
+// Erros de verificação 
+app.use(errors());
 
 // localhost:3333
 app.listen(3333);
