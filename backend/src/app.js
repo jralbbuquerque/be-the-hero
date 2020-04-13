@@ -54,4 +54,4 @@ app.use(routes);
 app.use(errors());
 
 // localhost:3333
-app.listen(3333);
+module.exports = app;

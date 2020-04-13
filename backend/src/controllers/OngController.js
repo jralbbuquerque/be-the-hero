@@ -1,5 +1,4 @@
-// Biblioteca utilizada para gerar id aleatórios
-const crypto = require('crypto');
+const generateUniqueId = require('../utils/generateUniqueId');
 
 // Importa as configurações do banco de dados
 const connection = require('../database/connection');
@@ -18,7 +17,7 @@ module.exports = {
         const { name, email, whatsapp, city, uf } = request.body;
 
         // Cria um ID aleatório
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateUniqueId();
         
         // insere os valores no banco de dados
         // o await espera a finalização da inserção para continuar o código
